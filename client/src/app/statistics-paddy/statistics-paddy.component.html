@@ -1,0 +1,49 @@
+<div class="chart-wrapper">
+
+ <div class="statistics-title">
+   <h1>(B) <span>Paddy Field Reading History</span> </h1>
+   <h2>***Note: 1 average reading is recorded on every 24 entries of the real-time data reading</h2>
+ </div>
+
+<div class="data-reading-group">
+  <fieldset class="data-reading-box">
+     <div class="data-reading-text">
+      <h1>Average Temperature</h1>
+     </div>
+     <div class="data-reading-value">
+       <p>{{single_temperatureP}} <span>°C</span></p>
+     </div>
+  </fieldset>
+  <fieldset class="data-reading-box">
+    <div class="data-reading-text">
+      <h1>Average Moisture</h1>
+    </div>
+    <div class="data-reading-value">
+      <p>{{single_moistureP}} <span>%</span></p>
+    </div>
+  </fieldset>
+  <fieldset class="data-reading-box">
+    <div class="data-reading-text">
+      <h1>Average Water Level</h1>
+    </div>
+    <div class="data-reading-value">
+      <p>{{single_waterLevelP}} <span>cm</span></p>
+    </div>
+  </fieldset>
+</div>
+
+<div class="line-chart-group">
+  <fieldset class="line-chart">
+    <canvas id="temperatureP"></canvas>
+  </fieldset>
+  <fieldset class="line-chart">
+    <canvas id="moistureP"></canvas>
+  </fieldset>
+  <fieldset class="line-chart">
+    <canvas id="waterLevelP"></canvas>
+  </fieldset>
+</div>
+
+</div>
+
+

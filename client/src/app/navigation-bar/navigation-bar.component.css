@@ -1,0 +1,60 @@
+
+.top-bar-item{
+ display: grid;
+ grid-template-columns: 1fr 12fr 6fr;
+ padding: 20px;
+}
+
+.centexs-logo{
+ width: 100%;
+ height: 50px;
+}
+
+.centexs-logo img{
+ width: auto;
+ height: 50px;
+}
+
+.centexs-name{
+ width: 100%;
+ height: 50px;
+ display: flex;
+ justify-content: left;
+ align-items: center;
+}
+
+.centexs-name p{
+ font-size: 18px;
+ font-weight: 500;
+ line-height: 22px;
+}
+
+.nav-links{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.nav-links ul li{
+ list-style: none;
+ display: inline-block;
+ margin-left: 10px;
+ margin-right: 10px;
+ justify-content: right;
+ align-items: center;
+}
+
+.nav-links ul li a{
+ text-decoration: none;
+ color: black;
+ font-size: 15px;
+ padding: 10px;
+ border: 2px solid black;
+}
+
+.nav-links ul li a:hover{
+ color: white;
+ background-color: black;
+ transition: 0.5s;
+ z-index: 1;
+}

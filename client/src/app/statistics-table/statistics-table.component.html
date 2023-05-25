@@ -1,0 +1,24 @@
+<div class="top-bar">
+ <app-navigation-bar></app-navigation-bar>
+</div>
+
+<div class="body-part">
+ <div class="line-graph-wrapper-mudcrab">
+   <app-statistics-mudcrab *ngIf="avg_MudCrab" [dataM]="avg_MudCrab"></app-statistics-mudcrab>
+ </div>
+</div>
+
+<div class="body-divider">
+</div>
+
+<div class="body-part">
+  <div class="line-graph-wrapper-paddy">
+    <app-statistics-paddy *ngIf="avg_Paddy" [dataP]="avg_Paddy"></app-statistics-paddy>
+  </div>
+</div>
+
+<div class="body-divider">
+</div>
+
+<div class="footer">
+</div>

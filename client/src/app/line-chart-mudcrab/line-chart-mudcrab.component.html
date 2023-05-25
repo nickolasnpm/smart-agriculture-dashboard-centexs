@@ -1,0 +1,78 @@
+<div class="chart-wrapper">
+
+  <div class="data-reading-group">
+    <fieldset class="data-reading-box-temperature">
+       <div class="data-reading-text">
+        <h1>Temperature</h1>
+        <h2>27 - 30</h2>
+       </div>
+       <div class="data-reading-value">
+         <p [style.color]="temperature_bool? 'white': 'red' ">{{single_temperature}} <span>°C</span></p>
+       </div>
+       <div class="data-adjust-button">
+         <button class="button" (click)="plusTemperature()">+</button>
+         <div class="refValue"><p>REF : {{temperatureRef}}</p></div>
+         <button class="button" (click)="minusTemperature()">-</button>
+       </div>
+    </fieldset>
+    <fieldset class="data-reading-box-pH">
+      <div class="data-reading-text">
+        <h1>pH Value</h1>
+        <h2>7.5 - 8.5</h2>
+      </div>
+      <div class="data-reading-value">
+        <p [style.color]="pH_bool? 'white': 'red' ">{{single_pH}} </p>
+      </div>
+      <div class="data-adjust-button">
+       <button class="button" (click)="pluspH()">+</button>
+       <div class="refValue"><p>REF : {{pHRef}}</p></div>
+       <button class="button" (click)="minuspH()">-</button>
+      </div>
+    </fieldset>
+    <fieldset class="data-reading-box-salinity">
+      <div class="data-reading-text">
+        <h1>Salinity</h1>
+        <h2>28 - 32</h2>
+      </div>
+      <div class="data-reading-value">
+        <p [style.color]="salinity_bool? 'white': 'red' ">{{single_salinity}} <span>%</span></p>
+      </div>
+      <div class="data-adjust-button">
+       <button class="button" (click)="plusSalinity()">+</button>
+       <div class="refValue"><p>REF : {{salinityRef}}</p></div>
+       <button class="button" (click)="minusSalinity()">-</button>
+      </div>
+    </fieldset>
+    <fieldset class="data-reading-box-waterLevel">
+      <div class="data-reading-text">
+        <h1>Water Level</h1>
+        <h2>1 - 5</h2>
+      </div>
+      <div class="data-reading-value">
+        <p [style.color]="waterLevel_bool? 'white': 'red' ">{{single_waterLevel}} <span>cm</span></p>
+      </div>
+      <div class="data-adjust-button">
+       <button class="button" (click)="plusWaterLevel()">+</button>
+       <div class="refValue"><p>REF : {{waterLevelRef}}</p></div>
+       <button class="button" (click)="minusWaterLevel()">-</button>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="line-chart-group">
+    <fieldset class="line-chart">
+      <canvas id="temperature"></canvas>
+    </fieldset>
+    <fieldset class="line-chart">
+      <canvas id="pH"></canvas>
+    </fieldset>
+    <fieldset class="line-chart">
+      <canvas id="salinity"></canvas>
+    </fieldset>
+    <fieldset class="line-chart">
+      <canvas id="waterLevel"></canvas>
+    </fieldset>
+  </div>
+  
+</div>
+

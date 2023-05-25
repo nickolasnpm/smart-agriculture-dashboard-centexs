@@ -1,0 +1,63 @@
+.statistics-title{
+ margin: 20px;
+ color: white;
+}
+
+.statistics-title h1{
+ font-size: 40px;
+ font-weight: 500;
+ margin-bottom: 40px;
+}
+
+.statistics-title h1 span{
+ text-decoration: underline;
+}
+
+.statistics-title h2{
+ font-size: 20px;
+ font-weight: 500;
+ font-style: italic;
+ text-align: right;
+}
+
+.data-reading-group{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ margin: 10px;
+ color: white;
+}
+
+.data-reading-box{
+ background: #FF5349;
+ border: 2px solid #FF5349;
+}
+
+.data-reading-text{
+ margin-bottom: 0px;
+}
+
+.data-reading-text h1{
+ font-size: 20px;
+ text-align: center;
+}
+
+.data-reading-value{
+ margin-bottom: 0px;
+}
+
+.data-reading-value p{
+ font-size: 60px;
+ font-weight: 600;
+ text-align: center;
+}
+
+.data-reading-value p span{
+ font-size: 45px;
+ font-weight: 600;
+}
+
+.line-chart-group{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ margin: 10px;
+}

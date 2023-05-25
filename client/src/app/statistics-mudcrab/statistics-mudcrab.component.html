@@ -1,0 +1,59 @@
+<div class="chart-wrapper">
+
+  <div class="statistics-title">
+    <h1>(A)  <span>Mud-Crab Pond Reading History</span></h1>
+    <h2>***Note: 1 average reading is recorded on every 24 entries of the real-time data reading</h2>
+  </div>
+
+ <div class="data-reading-group">
+   <fieldset class="data-reading-box">
+      <div class="data-reading-text">
+       <h1>Average Temperature</h1>
+      </div>
+      <div class="data-reading-value">
+        <p>{{single_temperatureM}} <span>°C</span></p>
+      </div>
+   </fieldset>
+   <fieldset class="data-reading-box">
+     <div class="data-reading-text">
+       <h1>Average pH Value</h1>
+     </div>
+     <div class="data-reading-value">
+       <p>{{single_pHM}} </p>
+     </div>
+   </fieldset>
+   <fieldset class="data-reading-box">
+     <div class="data-reading-text">
+       <h1>Average Salinity</h1>
+     </div>
+     <div class="data-reading-value">
+       <p>{{single_salinityM}} <span>%</span></p>
+     </div>
+   </fieldset>
+   <fieldset class="data-reading-box">
+     <div class="data-reading-text">
+       <h1>Average Water Level</h1>
+     </div>
+     <div class="data-reading-value">
+       <p>{{single_waterLevelM}} <span>cm</span></p>
+     </div>
+   </fieldset>
+ </div>
+
+ <div class="line-chart-group">
+   <fieldset class="line-chart">
+     <canvas id="temperatureM"></canvas>
+   </fieldset>
+   <fieldset class="line-chart">
+     <canvas id="pHM"></canvas>
+   </fieldset>
+   <fieldset class="line-chart">
+     <canvas id="salinityM"></canvas>
+   </fieldset>
+   <fieldset class="line-chart">
+     <canvas id="waterLevelM"></canvas>
+   </fieldset>
+ </div>
+ 
+</div>
+
