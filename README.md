@@ -1,12 +1,12 @@
 # Smart Agriculture Dashboard
 
-Smart Agriculture Dashboard is developed to monitor the environment of two agriculture prototype systems, namely the paddy field monitoring system and the mud crab monitoring system. By using this dashboard, farmers can monitor the variable that impacts the growth and harvest quality of both products. 
+Smart Agriculture Dashboard is developed to monitor the environment of two agriculture prototype systems, namely the paddy field monitoring system and the mud crab monitoring system. By using this dashboard, farmers can monitor the variables that impact the growth and harvest quality of both products. 
 
 ## Technologies 
 
 This dashboard is developed by using the following languages and frameworks
 
-1. Front-end : HTML, CSS, TypeScript, Angular, ChartJS
+1. Front-end: HTML, CSS, TypeScript, Angular, ChartJS
 2. Back-end: C#, .NET 6
 3. Database: Google Sheet
 
@@ -22,7 +22,7 @@ git clone https://github.com/nickolasnpm/smart-agriculture-dashboard-centexs.git
 
 ### Toolsets
 
-To run this project in your machine, please ensure that you have the following tools:
+To run this project on your machine, please ensure that you have the following tools:
 
 1. Visual Studio Code 
 
@@ -60,4 +60,4 @@ dotnet watch
 
 ## Note
 
-This dashboard is developed merely for educational purposes and is also displayed on local server at IoT Laboratory, CENTEXS for public view. 
+This dashboard is developed merely for educational purposes and is also displayed on the local server at IoT Laboratory, CENTEXS for public view. 
