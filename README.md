@@ -1,7 +1,7 @@
 # Smart Agriculture Dashboard
 
 Smart Agriculture Dashboard is developed to monitor the environment of two agriculture products, namely paddy and mudcrab.
-This project is developed specially for educational purposes.
+This project is developed for educational purposes.
 
 ## Installation
 
