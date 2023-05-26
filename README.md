@@ -36,7 +36,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
 ### Command
 
-This project has two folders; client and server. Please follow the following terminal command to run the both folders.
+This project has two folders; client and server. Please follow the following terminal command to run the folders.
 
 1. Client
 
