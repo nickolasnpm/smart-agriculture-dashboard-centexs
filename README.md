@@ -2,6 +2,14 @@
 
 Smart Agriculture Dashboard is developed to monitor the environment of two agriculture prototype systems, namely the paddy field monitoring system and the mud crab monitoring system. By using this dashboard, farmers can monitor the variable that impacts the growth and harvest quality of both products. 
 
+## Technologies 
+
+This dashboard is developed by using the following languages and frameworks
+
+1. Front-end : HTML, CSS, TypeScript, Angular, ChartJS
+2. Back-end: C#, .NET 6
+3. Database: Google Sheet
+
 ## Installation
 
 Use the git command to install Smart Agriculture Dashboard
