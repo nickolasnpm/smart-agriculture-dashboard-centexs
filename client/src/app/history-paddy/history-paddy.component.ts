@@ -3,43 +3,43 @@ import { Avg_Paddy } from '../models/data.data';
 import { Chart, registerables } from 'chart.js';
 
 @Component({
-  selector: 'app-statistics-paddy',
-  templateUrl: './statistics-paddy.component.html',
-  styleUrls: ['./statistics-paddy.component.css']
+  selector: 'app-history-paddy',
+  templateUrl: './history-paddy.component.html',
+  styleUrls: ['./history-paddy.component.css']
 })
-export class StatisticsPaddyComponent implements OnInit{
+export class HistoryPaddyComponent implements OnInit{
 
-  @Input() dataP!:Avg_Paddy[];
+  @Input() avgPaddy!:Avg_Paddy[];
 
   //Create Chart
   
-    single_temperatureP: any;
-    single_moistureP: any;
-    single_waterLevelP: any;
+    avg_temperaturePaddy: any;
+    avg_moisturePaddy: any;
+    avg_waterLevelPaddy: any;
   
-    chart_temperatureP: any;
-    chart_moistureP: any;
-    chart_waterLevelP: any;
+    chart_temperaturePaddy: any;
+    chart_moisturePaddy: any;
+    chart_waterLevelPaddy: any;
     autoRefresh: any;
   
     ngOnInit(): void {
 
       Chart.register(...registerables)
   
-      this.createChart_temperatureP();
-      this.createChart_moistureP();
-      this.createChart_waterLevelP();
+      this.createChart_temperaturePaddy();
+      this.createChart_moisturePaddy();
+      this.createChart_waterLevelPaddy();
   
       this.autoRefresh = 
         setInterval(() =>{
   
-          this.chart_temperatureP.destroy();
-          this.chart_moistureP.destroy();
-          this.chart_waterLevelP.destroy();
+          this.chart_temperaturePaddy.destroy();
+          this.chart_moisturePaddy.destroy();
+          this.chart_waterLevelPaddy.destroy();
   
-          this.createChart_temperatureP();
-          this.createChart_moistureP();
-          this.createChart_waterLevelP();
+          this.createChart_temperaturePaddy();
+          this.createChart_moisturePaddy();
+          this.createChart_waterLevelPaddy();
         }, 10000)
     }
   
@@ -47,15 +47,13 @@ export class StatisticsPaddyComponent implements OnInit{
       clearInterval(this.autoRefresh);
     }
 
-  createChart_temperatureP(): void {
+  createChart_temperaturePaddy(): void {
     const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-    const temperature = this.dataP.map(x=>x.avgTemperature);
+    const temperature = this.avgPaddy.map(x=>x.avgTemperature);
   
-    this.single_temperatureP = temperature[1];
-    console.log(temperature);
-    console.log(this.single_temperatureP);
+    this.avg_temperaturePaddy = temperature[1];
   
-    this.chart_temperatureP = new Chart("temperatureP", {
+    this.chart_temperaturePaddy = new Chart("temperaturePaddy", {
       type: 'line',
       data: {
         labels: labels,
@@ -102,15 +100,13 @@ export class StatisticsPaddyComponent implements OnInit{
     })
   }
   
-  createChart_moistureP() {
+  createChart_moisturePaddy() {
     const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-    const moisture=this.dataP.map(x=>x.avgMoisture);
+    const moisture=this.avgPaddy.map(x=>x.avgMoisture);
   
-    this.single_moistureP = moisture[1];
-    console.log(moisture);
-    console.log(this.single_moistureP);
+    this.avg_moisturePaddy = moisture[1];
   
-    this.chart_moistureP = new Chart("moistureP", {
+    this.chart_moisturePaddy = new Chart("moisturePaddy", {
       type: 'line',
       data: {
         labels: labels,
@@ -157,15 +153,13 @@ export class StatisticsPaddyComponent implements OnInit{
     })
   }
   
-  createChart_waterLevelP() {
+  createChart_waterLevelPaddy() {
     const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-    const waterLevel = this.dataP.map(x=>x.avgWaterLevel);
+    const waterLevel = this.avgPaddy.map(x=>x.avgWaterLevel);
   
-    this.single_waterLevelP = waterLevel[1];
-    console.log(waterLevel);
-    console.log(this.single_waterLevelP);
+    this.avg_waterLevelPaddy = waterLevel[1];
   
-    this.chart_waterLevelP = new Chart("waterLevelP", {
+    this.chart_waterLevelPaddy = new Chart("waterLevelPaddy", {
       type: 'line',
       data: {
         labels: labels,

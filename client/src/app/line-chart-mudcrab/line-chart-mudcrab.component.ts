@@ -9,7 +9,7 @@ import { Data_MudCrab } from '../models/data.data';
 })
 export class LineChartMudcrabComponent implements OnInit {
   
-  @Input() data!:Data_MudCrab[];
+  @Input() currentReading_Mudcrab!:Data_MudCrab[];
 
     //temperature adjust
     temperatureRef: number = 28;
@@ -76,43 +76,43 @@ export class LineChartMudcrabComponent implements OnInit {
 
   //Create Chart
 
-  single_temperature: any;
-  single_pH: any;
-  single_salinity: any;
-  single_waterLevel: any;
+  chart_temperatureMudcrab: any;
+  chart_phMudcrab: any;
+  chart_salinityMudcrab: any;
+  chart_waterLevelMudcrab: any;
+  autoRefresh: any;
+
+  currentReading_temperatureMudcrab: any;
+  currentReading_pHMudcrab: any;
+  currentReading_salinityMudcrab: any;
+  currentReading_waterLevelMudcrab: any;
 
   temperature_bool: boolean = true;
   pH_bool: boolean = true;
   salinity_bool: boolean = true;
   waterLevel_bool: boolean = true;
 
-  chart_temperature: any;
-  chart_ph: any;
-  chart_salinity: any;
-  chart_waterLevel: any;
-  autoRefresh: any;
-
   ngOnInit(): void{
 
     Chart.register(...registerables)
     
-    this.createChart_temperature();
-    this.createChart_pH();
-    this.createChart_salinity();
-    this.createChart_waterLevel();
+    this.createChart_temperatureMudcrab();
+    this.createChart_pHMudcrab();
+    this.createChart_salinityMudcrab();
+    this.createChart_waterLevelMudcrab();
     
     this.autoRefresh = 
       setInterval(() =>{
 
-        this.chart_temperature.destroy();
-        this.chart_ph.destroy();
-        this.chart_salinity.destroy();
-        this.chart_waterLevel.destroy();
+        this.chart_temperatureMudcrab.destroy();
+        this.chart_phMudcrab.destroy();
+        this.chart_salinityMudcrab.destroy();
+        this.chart_waterLevelMudcrab.destroy();
         
-        this.createChart_temperature();
-        this.createChart_pH();
-        this.createChart_salinity();
-        this.createChart_waterLevel();
+        this.createChart_temperatureMudcrab();
+        this.createChart_pHMudcrab();
+        this.createChart_salinityMudcrab();
+        this.createChart_waterLevelMudcrab();
       }, 10000)
   }
 
@@ -120,15 +120,13 @@ export class LineChartMudcrabComponent implements OnInit {
     clearInterval(this.autoRefresh);
   }
 
-  createChart_temperature(): void {
-    const labels = this.data.map(x=>x.date);
-    const temperature = this.data.map(x=>x.temperature);
+  createChart_temperatureMudcrab(): void {
+    const labels = this.currentReading_Mudcrab.map(x=>x.date);
+    const temperature = this.currentReading_Mudcrab.map(x=>x.temperature);
 
-    this.single_temperature = temperature[0];
-    console.log(temperature);
-    console.log(this.single_temperature);
+    this.currentReading_temperatureMudcrab = temperature[0];
 
-    if(this.single_temperature < 27 || this.single_temperature > 30){
+    if(this.currentReading_temperatureMudcrab < 27 || this.currentReading_temperatureMudcrab > 30){
       this.temperature_bool = false;
       console.log(this.temperature_bool);
     }
@@ -137,7 +135,7 @@ export class LineChartMudcrabComponent implements OnInit {
       console.log(this.temperature_bool);
     }
 
-    this.chart_temperature = new Chart("temperature", {
+    this.chart_temperatureMudcrab = new Chart("temperatureMudcrab", {
       type: 'line',
       data: {
         labels: labels,
@@ -184,15 +182,13 @@ export class LineChartMudcrabComponent implements OnInit {
     })
   }
 
-  createChart_pH() {
-    const labels = this.data.map(x=>x.date);
-    const ph=this.data.map(x=>x.pH);
+  createChart_pHMudcrab() {
+    const labels = this.currentReading_Mudcrab.map(x=>x.date);
+    const ph=this.currentReading_Mudcrab.map(x=>x.pH);
 
-    this.single_pH = ph[0];
-    console.log(ph);
-    console.log(this.single_pH);
+    this.currentReading_pHMudcrab = ph[0];
 
-    if(this.single_pH < 7.5 || this.single_pH > 8.5){
+    if(this.currentReading_pHMudcrab < 7.5 || this.currentReading_pHMudcrab > 8.5){
       this.pH_bool = false;
       console.log(this.pH_bool);
     }
@@ -201,7 +197,7 @@ export class LineChartMudcrabComponent implements OnInit {
       console.log(this.pH_bool);
     }
 
-    this.chart_ph = new Chart("pH", {
+    this.chart_phMudcrab = new Chart("pHMudcrab", {
       type: 'line',
       data: {
         labels: labels,
@@ -248,15 +244,13 @@ export class LineChartMudcrabComponent implements OnInit {
     })
   }
 
-  createChart_salinity() {
-    const labels = this.data.map(x=>x.date);
-    const salinity=this.data.map(x=>x.salinity);
+  createChart_salinityMudcrab() {
+    const labels = this.currentReading_Mudcrab.map(x=>x.date);
+    const salinity=this.currentReading_Mudcrab.map(x=>x.salinity);
 
-    this.single_salinity = salinity[0];
-    console.log(salinity);
-    console.log(this.single_salinity);
+    this.currentReading_salinityMudcrab = salinity[0];
 
-    if(this.single_salinity < 28 || this.single_salinity > 32){
+    if(this.currentReading_salinityMudcrab < 28 || this.currentReading_salinityMudcrab > 32){
       this.salinity_bool = false;
       console.log(this.salinity_bool);
     }
@@ -265,7 +259,7 @@ export class LineChartMudcrabComponent implements OnInit {
       console.log(this.salinity_bool);
     }
 
-    this.chart_salinity = new Chart("salinity", {
+    this.chart_salinityMudcrab = new Chart("salinityMudcrab", {
       type: 'line',
       data: {
         labels: labels,
@@ -313,15 +307,15 @@ export class LineChartMudcrabComponent implements OnInit {
 
   }
 
-  createChart_waterLevel() {
-    const labels = this.data.map(x=>x.date);
-    const waterLevel=this.data.map(x=>x.waterLevel);
+  createChart_waterLevelMudcrab() {
+    const labels = this.currentReading_Mudcrab.map(x=>x.date);
+    const waterLevel=this.currentReading_Mudcrab.map(x=>x.waterLevel);
 
-    this.single_waterLevel = waterLevel[0];
+    this.currentReading_waterLevelMudcrab = waterLevel[0];
     console.log(waterLevel);
-    console.log(this.single_waterLevel);
+    console.log(this.currentReading_waterLevelMudcrab);
 
-    if(this.single_waterLevel < 1 || this.single_waterLevel > 5){
+    if(this.currentReading_waterLevelMudcrab < 1 || this.currentReading_waterLevelMudcrab > 5){
       this.waterLevel_bool = false;
       console.log(this.waterLevel_bool);
     }
@@ -330,7 +324,7 @@ export class LineChartMudcrabComponent implements OnInit {
       console.log(this.waterLevel_bool);
     }
 
-    this.chart_waterLevel = new Chart("waterLevel", {
+    this.chart_waterLevelMudcrab = new Chart("waterLevelMudcrab", {
       type: 'line',
       data: {
         labels: labels,

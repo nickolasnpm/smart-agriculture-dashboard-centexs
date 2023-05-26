@@ -6,7 +6,7 @@
       <app-current-reading-paddy
       [name]="'Temperature'" [range]="'27 - 30'" 
       [isDangerText]="temperature_bool" 
-      [readingValue]="single_temperature" 
+      [readingValue]="currentReading_temperaturePaddy" 
       [refNumber]="temperatureRef" 
       (increment)="plusTemperature()" 
       (decrement)="minusTemperature()">
@@ -17,7 +17,7 @@
       <app-current-reading-paddy
       [name]="'Moisture'" [range]="'20 - 60'" 
       [isDangerText]="moisture_bool" 
-      [readingValue]="single_moisture" 
+      [readingValue]="currentReading_moisturePaddy" 
       [refNumber]="moistureRef" 
       (increment)="plusMoisture()" 
       (decrement)="minusMoisture()">
@@ -29,7 +29,7 @@
       [name]="'Water Level'" 
       [range]="'1 - 5'" 
       [isDangerText]="waterLevel_bool" 
-      [readingValue]="single_waterLevel" 
+      [readingValue]="currentReading_waterLevelPaddy" 
       [refNumber]="waterLevelRef" 
       (increment)="plusWaterLevel()" 
       (decrement)="minusWaterLevel()">
@@ -41,13 +41,13 @@
 
   <div class="line-chart-group">
    <div class="line-chart">
-    <canvas id="temperature"></canvas>
+    <canvas id="temperaturePaddy"></canvas>
    </div>
    <div class="line-chart">
-    <canvas id="moisture"></canvas>
+    <canvas id="moisturePaddy"></canvas>
    </div>
    <div class="line-chart">
-    <canvas id="waterLevel"></canvas>
+    <canvas id="waterLevelPaddy"></canvas>
    </div>
   </div>
 

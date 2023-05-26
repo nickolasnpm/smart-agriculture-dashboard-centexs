@@ -89,8 +89,6 @@ namespace IotDashboard.Controllers
                 {
                     now++;
 
-                    Console.WriteLine(index + " | " + now);
-
                     average.Add(new Paddy_Average()
                     {
                         avgTemperature = Convert.ToInt32((totalTemperature / 24).ToString("#.#")),

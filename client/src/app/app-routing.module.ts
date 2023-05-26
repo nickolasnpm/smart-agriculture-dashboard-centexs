@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardMudcrabComponent } from './dashboard-mudcrab/dashboard-mudcrab.component';
 import { DashboardPaddyComponent } from './dashboard-paddy/dashboard-paddy.component';
-import { StatisticsTableComponent } from './statistics-table/statistics-table.component';
+import { HistoryTableComponent } from './history-table/history-table.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component:DashboardPaddyComponent,
   },
   {
-    path: 'statistics-table',
-    component:StatisticsTableComponent,
+    path: 'history-table',
+    component:HistoryTableComponent,
   },
   {
     path: '', 

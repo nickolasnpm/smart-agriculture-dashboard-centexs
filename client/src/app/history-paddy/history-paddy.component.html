@@ -1,0 +1,28 @@
+<div class="chart-wrapper">
+
+ <div class="statistics-title">
+   <h1>(B) <span>Paddy Field Reading History</span> </h1>
+   <h2>***Note: 1 average reading is recorded on every 24 entries of the real-time data reading</h2>
+ </div>
+
+<div class="data-reading-group">
+    <app-average-reading-paddy [name]="'Average Temperature'" [value]="avg_temperaturePaddy" [symbol]="'°C'"></app-average-reading-paddy>
+    <app-average-reading-paddy [name]="'Average Moisture'" [value]="avg_moisturePaddy" [symbol]="'%'"></app-average-reading-paddy>
+    <app-average-reading-paddy [name]="'Average Water Level'" [value]="avg_waterLevelPaddy" [symbol]="'cm'"></app-average-reading-paddy>
+</div>
+
+<div class="line-chart-group">
+  <div class="line-chart">
+    <canvas id="temperaturePaddy"></canvas>
+  </div>
+  <div class="line-chart">
+    <canvas id="moisturePaddy"></canvas>
+  </div>
+  <div class="line-chart">
+    <canvas id="waterLevelPaddy"></canvas>
+  </div>
+</div>
+
+</div>
+
+

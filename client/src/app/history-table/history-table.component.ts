@@ -3,11 +3,11 @@ import { Avg_MudCrab, Avg_Paddy } from '../models/data.data';
 import { DashboardService } from '../services/dashboard.service';
 
 @Component({
-  selector: 'app-statistics-table',
-  templateUrl: './statistics-table.component.html',
-  styleUrls: ['./statistics-table.component.css']
+  selector: 'app-history-table',
+  templateUrl: './history-table.component.html',
+  styleUrls: ['./history-table.component.css']
 })
-export class StatisticsTableComponent {
+export class HistoryTableComponent {
 
   avg_MudCrab?:Avg_MudCrab[]
   avg_Paddy?:Avg_Paddy[]

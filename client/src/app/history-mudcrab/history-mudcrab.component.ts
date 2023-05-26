@@ -3,48 +3,48 @@ import { Avg_MudCrab } from '../models/data.data';
 import { Chart, registerables } from 'chart.js';
 
 @Component({
-  selector: 'app-statistics-mudcrab',
-  templateUrl: './statistics-mudcrab.component.html',
-  styleUrls: ['./statistics-mudcrab.component.css']
+  selector: 'app-history-mudcrab',
+  templateUrl: './history-mudcrab.component.html',
+  styleUrls: ['./history-mudcrab.component.css']
 })
-export class StatisticsMudcrabComponent implements OnInit{
+export class HistoryMudcrabComponent implements OnInit{
 
-  @Input() dataM!:Avg_MudCrab[];
+  @Input() avgMudcrab!:Avg_MudCrab[];
 
 //Create Chart
 
-  single_temperatureM: any;
-  single_pHM: any;
-  single_salinityM: any;
-  single_waterLevelM: any;
+  avg_temperatureMudcrab: any;
+  avg_pHMudcrab: any;
+  avg_salinityMudcrab: any;
+  avg_waterLevelMudcrab: any;
 
-  chart_temperatureM: any;
-  chart_phM: any;
-  chart_salinityM: any;
-  chart_waterLevelM: any;
+  chart_temperatureMudcrab: any;
+  chart_phMudcrab: any;
+  chart_salinityMudcrab: any;
+  chart_waterLevelMudcrab: any;
   autoRefresh: any;
 
   ngOnInit(): void{
 
   Chart.register(...registerables)
   
-  this.createChart_temperatureM();
-  this.createChart_pHM();
-  this.createChart_salinityM();
-  this.createChart_waterLevelM();
+  this.createChart_temperatureMudcrab();
+  this.createChart_pHMudcrab();
+  this.createChart_salinityMudcrab();
+  this.createChart_waterLevelMudcrab();
   
   this.autoRefresh = 
     setInterval(() =>{
 
-      this.chart_temperatureM.destroy();
-      this.chart_phM.destroy();
-      this.chart_salinityM.destroy();
-      this.chart_waterLevelM.destroy();
+      this.chart_temperatureMudcrab.destroy();
+      this.chart_phMudcrab.destroy();
+      this.chart_salinityMudcrab.destroy();
+      this.chart_waterLevelMudcrab.destroy();
       
-      this.createChart_temperatureM();
-      this.createChart_pHM();
-      this.createChart_salinityM();
-      this.createChart_waterLevelM();
+      this.createChart_temperatureMudcrab();
+      this.createChart_pHMudcrab();
+      this.createChart_salinityMudcrab();
+      this.createChart_waterLevelMudcrab();
     }, 10000)
 }
 
@@ -52,15 +52,13 @@ ngOnDestroy(){
   clearInterval(this.autoRefresh);
 }
 
-createChart_temperatureM(): void {
+createChart_temperatureMudcrab(): void {
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  const temperature = this.dataM.map(x=>x.avgTemperature);
+  const temperature = this.avgMudcrab.map(x=>x.avgTemperature);
 
-  this.single_temperatureM = temperature[1];
-  console.log(temperature);
-  console.log(this.single_temperatureM);
+  this.avg_temperatureMudcrab = temperature[1];
 
-  this.chart_temperatureM = new Chart("temperatureM", {
+  this.chart_temperatureMudcrab = new Chart("temperatureMudcrab", {
     type: 'line',
     data: {
       labels: labels,
@@ -107,15 +105,13 @@ createChart_temperatureM(): void {
   })
 }
 
-createChart_pHM() {
+createChart_pHMudcrab() {
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  const ph=this.dataM.map(x=>x.avgpH);
+  const ph=this.avgMudcrab.map(x=>x.avgpH);
 
-  this.single_pHM = ph[0];
-  console.log(ph);
-  console.log(this.single_pHM);
+  this.avg_pHMudcrab = ph[0];
 
-  this.chart_phM = new Chart("pHM", {
+  this.chart_phMudcrab = new Chart("pHMudcrab", {
     type: 'line',
     data: {
       labels: labels,
@@ -162,15 +158,13 @@ createChart_pHM() {
   })
 }
 
-createChart_salinityM() {
+createChart_salinityMudcrab() {
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  const salinity = this.dataM.map(x=>x.avgSalinity);
+  const salinity = this.avgMudcrab.map(x=>x.avgSalinity);
 
-  this.single_salinityM = salinity[0];
-  console.log(salinity);
-  console.log(this.single_salinityM);
+  this.avg_salinityMudcrab = salinity[0];
 
-  this.chart_salinityM = new Chart("salinityM", {
+  this.chart_salinityMudcrab = new Chart("salinityMudcrab", {
     type: 'line',
     data: {
       labels: labels,
@@ -218,15 +212,13 @@ createChart_salinityM() {
 
 }
 
-createChart_waterLevelM() {
+createChart_waterLevelMudcrab() {
   const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  const waterLevel = this.dataM.map(x=>x.avgWaterLevel);
+  const waterLevel = this.avgMudcrab.map(x=>x.avgWaterLevel);
 
-  this.single_waterLevelM = waterLevel[0];
-  console.log(waterLevel);
-  console.log(this.single_waterLevelM);
+  this.avg_waterLevelMudcrab = waterLevel[0];
 
-  this.chart_waterLevelM = new Chart("waterLevelM", {
+  this.chart_waterLevelMudcrab = new Chart("waterLevelMudcrab", {
     type: 'line',
     data: {
       labels: labels,

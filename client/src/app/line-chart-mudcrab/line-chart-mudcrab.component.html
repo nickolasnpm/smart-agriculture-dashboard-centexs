@@ -6,7 +6,7 @@
       <app-current-reading-mudcrab
       [name]="'Temperature'" [range]="'27 - 30'" 
       [isDangerText]="temperature_bool" 
-      [readingValue]="single_temperature" 
+      [readingValue]="currentReading_temperatureMudcrab" 
       [refNumber]="temperatureRef" 
       (increment)="plusTemperature()" 
       (decrement)="minusTemperature()">
@@ -17,7 +17,7 @@
       <app-current-reading-mudcrab
       [name]="'ph Value'" [range]="'7.5 - 8.5'" 
       [isDangerText]="pH_bool" 
-      [readingValue]="single_pH" 
+      [readingValue]="currentReading_pHMudcrab" 
       [refNumber]="pHRef" 
       (increment)="pluspH()" 
       (decrement)="minuspH()">
@@ -28,7 +28,7 @@
       <app-current-reading-mudcrab
       [name]="'Salinity'" [range]="'28 - 32'" 
       [isDangerText]="salinity_bool" 
-      [readingValue]="single_salinity" 
+      [readingValue]="currentReading_salinityMudcrab" 
       [refNumber]="salinityRef" 
       (increment)="plusSalinity()" 
       (decrement)="minusSalinity()">
@@ -40,7 +40,7 @@
       [name]="'Water Level'" 
       [range]="'1 - 5'" 
       [isDangerText]="waterLevel_bool" 
-      [readingValue]="single_waterLevel" 
+      [readingValue]="currentReading_waterLevelMudcrab" 
       [refNumber]="waterLevelRef" 
       (increment)="plusWaterLevel()" 
       (decrement)="minusWaterLevel()">
@@ -51,16 +51,16 @@
 
   <div class="line-chart-group">
     <fieldset class="line-chart">
-      <canvas id="temperature"></canvas>
+      <canvas id="temperatureMudcrab"></canvas>
     </fieldset>
     <fieldset class="line-chart">
-      <canvas id="pH"></canvas>
+      <canvas id="pHMudcrab"></canvas>
     </fieldset>
     <fieldset class="line-chart">
-      <canvas id="salinity"></canvas>
+      <canvas id="salinityMudcrab"></canvas>
     </fieldset>
     <fieldset class="line-chart">
-      <canvas id="waterLevel"></canvas>
+      <canvas id="waterLevelMudcrab"></canvas>
     </fieldset>
   </div>
   

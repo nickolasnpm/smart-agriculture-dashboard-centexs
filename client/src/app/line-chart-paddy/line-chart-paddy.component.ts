@@ -9,7 +9,7 @@ import { Chart, registerables } from 'chart.js';
 })
 export class LineChartPaddyComponent implements OnInit {
 
-  @Input() data!:Data_Paddy[];
+  @Input() currentReading_Paddy!:Data_Paddy[];
 
   //temperature adjust
   temperatureRef: number = 28;
@@ -59,14 +59,14 @@ export class LineChartPaddyComponent implements OnInit {
 
   //create line chart
 
-  chart_temperature: any;
-  chart_moisture: any;
-  chart_waterLevel: any;
+  chart_temperaturePaddy: any;
+  chart_moisturePaddy: any;
+  chart_waterLevelPaddy: any;
   autoRefresh: any;
 
-  single_temperature: any;
-  single_moisture: any;
-  single_waterLevel: any;
+  currentReading_temperaturePaddy: any;
+  currentReading_moisturePaddy: any;
+  currentReading_waterLevelPaddy: any;
 
   temperature_bool: boolean = true;
   moisture_bool: boolean = true;
@@ -76,20 +76,20 @@ export class LineChartPaddyComponent implements OnInit {
 
     Chart.register(...registerables)
 
-    this.createChart_temperature();
-    this.createChart_moisture();
-    this.createChart_waterLevel();
+    this.createChart_temperaturePaddy();
+    this.createChart_moisturePaddy();
+    this.createChart_waterLevelPaddy();
 
     this.autoRefresh = 
       setInterval(() =>{
 
-        this.chart_temperature.destroy();
-        this.chart_moisture.destroy();
-        this.chart_waterLevel.destroy();
+        this.chart_temperaturePaddy.destroy();
+        this.chart_moisturePaddy.destroy();
+        this.chart_waterLevelPaddy.destroy();
 
-        this.createChart_temperature();
-        this.createChart_moisture();
-        this.createChart_waterLevel();
+        this.createChart_temperaturePaddy();
+        this.createChart_moisturePaddy();
+        this.createChart_waterLevelPaddy();
       }, 10000)
   }
 
@@ -97,16 +97,14 @@ export class LineChartPaddyComponent implements OnInit {
     clearInterval(this.autoRefresh);
   }
 
-  createChart_temperature() {
+  createChart_temperaturePaddy() {
     
-    const labels = this.data.map(x=>x.date);
-    const temperature = this.data.map(x=>x.temperature);
+    const labels = this.currentReading_Paddy.map(x=>x.date);
+    const temperature = this.currentReading_Paddy.map(x=>x.temperature);
 
-    this.single_temperature = temperature[0];
-    console.log(temperature);
-    console.log(this.single_temperature);
+    this.currentReading_temperaturePaddy = temperature[0];
 
-    if(this.single_temperature < 27 || this.single_temperature > 30){
+    if(this.currentReading_temperaturePaddy < 27 || this.currentReading_temperaturePaddy > 30){
       this.temperature_bool = false;
       console.log(this.temperature_bool);
     }
@@ -115,7 +113,7 @@ export class LineChartPaddyComponent implements OnInit {
       console.log(this.temperature_bool);
     }
 
-    this.chart_temperature = new Chart("temperature", {
+    this.chart_temperaturePaddy = new Chart("temperaturePaddy", {
       type: 'line',
       data: {
         labels: labels,
@@ -163,16 +161,14 @@ export class LineChartPaddyComponent implements OnInit {
 
   }
 
-  createChart_moisture() {
+  createChart_moisturePaddy() {
 
-    const labels = this.data.map(x=>x.date);
-    const moisture=this.data.map(x=>x.moisture);
+    const labels = this.currentReading_Paddy.map(x=>x.date);
+    const moisture=this.currentReading_Paddy.map(x=>x.moisture);
 
-    this.single_moisture = moisture[0];
-    console.log(moisture);
-    console.log(this.single_moisture);
+    this.currentReading_moisturePaddy = moisture[0];
 
-    if(this.single_moisture < 20 || this.single_moisture > 60){
+    if(this.currentReading_moisturePaddy < 20 || this.currentReading_moisturePaddy > 60){
       this.moisture_bool = false;
       console.log(this.moisture_bool);
     }
@@ -181,7 +177,7 @@ export class LineChartPaddyComponent implements OnInit {
       console.log(this.moisture_bool);
     }
 
-    this.chart_moisture = new Chart("moisture", {
+    this.chart_moisturePaddy = new Chart("moisturePaddy", {
       type: 'line',
       data: {
         labels: labels,
@@ -229,15 +225,13 @@ export class LineChartPaddyComponent implements OnInit {
 
   }
 
-  createChart_waterLevel() {
-    const labels = this.data.map(x=>x.date);
-    const waterLevel=this.data.map(x=>x.waterLevel);
+  createChart_waterLevelPaddy() {
+    const labels = this.currentReading_Paddy.map(x=>x.date);
+    const waterLevel=this.currentReading_Paddy.map(x=>x.waterLevel);
 
-    this.single_waterLevel = waterLevel[0];
-    console.log(waterLevel);
-    console.log(this.single_waterLevel);
+    this.currentReading_waterLevelPaddy = waterLevel[0];
 
-    if(this.single_waterLevel < 1 || this.single_waterLevel > 5){
+    if(this.currentReading_waterLevelPaddy < 1 || this.currentReading_waterLevelPaddy > 5){
       this.waterLevel_bool = false;
       console.log(this.waterLevel_bool);
     }
@@ -246,7 +240,7 @@ export class LineChartPaddyComponent implements OnInit {
       console.log(this.waterLevel_bool);
     }
 
-    this.chart_waterLevel = new Chart("waterLevel", {
+    this.chart_waterLevelPaddy = new Chart("waterLevelPaddy", {
       type: 'line',
       data: {
         labels: labels,
