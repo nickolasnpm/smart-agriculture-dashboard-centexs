@@ -6,42 +6,21 @@
  </div>
 
 <div class="data-reading-group">
-  <fieldset class="data-reading-box">
-     <div class="data-reading-text">
-      <h1>Average Temperature</h1>
-     </div>
-     <div class="data-reading-value">
-       <p>{{single_temperatureP}} <span>°C</span></p>
-     </div>
-  </fieldset>
-  <fieldset class="data-reading-box">
-    <div class="data-reading-text">
-      <h1>Average Moisture</h1>
-    </div>
-    <div class="data-reading-value">
-      <p>{{single_moistureP}} <span>%</span></p>
-    </div>
-  </fieldset>
-  <fieldset class="data-reading-box">
-    <div class="data-reading-text">
-      <h1>Average Water Level</h1>
-    </div>
-    <div class="data-reading-value">
-      <p>{{single_waterLevelP}} <span>cm</span></p>
-    </div>
-  </fieldset>
+    <app-average-reading-paddy [name]="'Average Temperature'" [value]="single_temperatureP" [symbol]="'°C'"></app-average-reading-paddy>
+    <app-average-reading-paddy [name]="'Average Moisture'" [value]="single_moistureP" [symbol]="'%'"></app-average-reading-paddy>
+    <app-average-reading-paddy [name]="'Average Water Level'" [value]="single_waterLevelP" [symbol]="'cm'"></app-average-reading-paddy>
 </div>
 
 <div class="line-chart-group">
-  <fieldset class="line-chart">
+  <div class="line-chart">
     <canvas id="temperatureP"></canvas>
-  </fieldset>
-  <fieldset class="line-chart">
+  </div>
+  <div class="line-chart">
     <canvas id="moistureP"></canvas>
-  </fieldset>
-  <fieldset class="line-chart">
+  </div>
+  <div class="line-chart">
     <canvas id="waterLevelP"></canvas>
-  </fieldset>
+  </div>
 </div>
 
 </div>

@@ -1,0 +1,15 @@
+<div class="data-reading-text">
+  <h1>{{name}}</h1>
+  <h2>{{range}}</h2>
+</div>
+    
+<div class="data-reading-value">
+  <p [style.color]="isDangerText ? 'white': 'red' ">{{readingValue}} <span>%</span></p>
+</div>
+  
+<div class="data-adjust-button">
+  <button class="button" (click)="incrementOnClick()">+</button>
+  <div class="refValue"><p>REF : {{refNumber}}</p></div>
+  <button class="button" (click)="decrementOnClick()">-</button>
+</div>
+  

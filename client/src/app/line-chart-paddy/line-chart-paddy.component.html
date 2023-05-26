@@ -1,61 +1,54 @@
 <div class="chart-wrapper">
 
   <div class="data-reading-group">
-    <fieldset class="data-reading-box-temperature">
-      <div class="data-reading-text">
-        <h1>Temperature</h1>
-        <h2>27 - 30</h2>
-      </div>
-      <div class="data-reading-value">
-       <p [style.color]="temperature_bool? 'white': 'red' ">{{single_temperature}} <span>°C</span></p>
-      </div>
-      <div class="data-adjust-button">
-       <button class="button" (click)="plusTemperature()">+</button>
-       <div class="refValue"><p>REF : {{temperatureRef}}</p></div>
-       <button class="button" (click)="minusTemperature()">-</button>
-      </div>
-    </fieldset>
-    <fieldset class="data-reading-box-moisture">
-      <div class="data-reading-text">
-        <h1>Moisture</h1>
-        <h2>20 - 60</h2>
-      </div>
-      <div class="data-reading-value">
-       <p [style.color]="moisture_bool? 'white': 'red' ">{{single_moisture}} <span>%</span></p>
-      </div>
-      <div class="data-adjust-button">
-       <button class="button" (click)="plusMoisture()">+</button>
-       <div class="refValue"><p>REF : {{moistureRef}}</p></div>
-       <button class="button" (click)="minusMoisture()">-</button>
-      </div>
-    </fieldset>
-    <fieldset class="data-reading-box-waterLevel">
-      <div class="data-reading-text">
-        <h1>Water Level</h1>
-        <h2>1 - 5</h2>
-      </div>
-      <div class="data-reading-value">
-       <p [style.color]="waterLevel_bool? 'white': 'red' ">{{single_waterLevel}} <span>cm</span></p>
-      </div>
-      <div class="data-adjust-button">
-       <button class="button" (click)="plusWaterLevel()">+</button>
-       <div class="refValue"><p>REF : {{waterLevelRef}}</p></div>
-       <button class="button" (click)="minusWaterLevel()">-</button>
-      </div>
-    </fieldset>
+
+    <div class="data-reading-box-temperature">
+      <app-current-reading-paddy
+      [name]="'Temperature'" [range]="'27 - 30'" 
+      [isDangerText]="temperature_bool" 
+      [readingValue]="single_temperature" 
+      [refNumber]="temperatureRef" 
+      (increment)="plusTemperature()" 
+      (decrement)="minusTemperature()">
+      </app-current-reading-paddy>
+    </div>
+
+    <div class="data-reading-box-moisture">
+      <app-current-reading-paddy
+      [name]="'Moisture'" [range]="'20 - 60'" 
+      [isDangerText]="moisture_bool" 
+      [readingValue]="single_moisture" 
+      [refNumber]="moistureRef" 
+      (increment)="plusMoisture()" 
+      (decrement)="minusMoisture()">
+      </app-current-reading-paddy>
+    </div>
+
+    <div class="data-reading-box-waterLevel">
+      <app-current-reading-paddy 
+      [name]="'Water Level'" 
+      [range]="'1 - 5'" 
+      [isDangerText]="waterLevel_bool" 
+      [readingValue]="single_waterLevel" 
+      [refNumber]="waterLevelRef" 
+      (increment)="plusWaterLevel()" 
+      (decrement)="minusWaterLevel()">
+      </app-current-reading-paddy>
+    </div>
+
   </div>
  
 
   <div class="line-chart-group">
-   <fieldset class="line-chart">
+   <div class="line-chart">
     <canvas id="temperature"></canvas>
-   </fieldset>
-   <fieldset class="line-chart">
+   </div>
+   <div class="line-chart">
     <canvas id="moisture"></canvas>
-   </fieldset>
-   <fieldset class="line-chart">
+   </div>
+   <div class="line-chart">
     <canvas id="waterLevel"></canvas>
-   </fieldset>
+   </div>
   </div>
 
 </div>

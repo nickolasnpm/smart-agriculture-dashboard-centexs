@@ -1,0 +1,69 @@
+.data-reading-text{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: -40px;
+   }
+   
+.data-reading-text h1{
+    font-size: 20px;
+    text-align: start;
+    padding: 20px;
+}
+   
+.data-reading-text h2{
+    font-size: 20px;
+    text-align: end;
+}
+   
+.data-reading-value{
+    margin-bottom: -40px;
+}
+   
+.data-reading-value p{
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+}
+   
+.data-reading-value p span{
+    font-size: 30px;
+    font-weight: 600;
+}
+   
+.data-adjust-button{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 60px;
+}
+   
+.data-adjust-button .button{
+    margin: 20px;
+    width: auto;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent;
+    border: 2px solid white;
+}
+   
+.data-adjust-button .button:hover{
+    color: black;
+    background: white;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+   
+.data-adjust-button .refValue{
+    margin: 20px;
+    width: auto;
+    height: 20px;
+}
+   
+.data-adjust-button .refValue p{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}

@@ -1,102 +1,47 @@
 .data-reading-group{
- display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr;
- margin: 10px;
- color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 10px;
+    color: white;
 }
 
 .data-reading-box-temperature{
- background: blue;
- border: 2px solid blue;
+    background-color: blue;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .data-reading-box-pH{
- background: purple;
- border: 2px solid purple;
+    background-color: purple;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .data-reading-box-salinity{
- background: green;
- border: 2px solid green;
+    background-color: green;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .data-reading-box-waterLevel{
- background: orange;
- border: 2px solid orange;
-}
-
-.data-reading-text{
- display: grid;
- grid-template-columns: 1fr 1fr;
- margin-bottom: -40px;
-}
-
-.data-reading-text h1{
- font-size: 20px;
- text-align: start;
-}
-
-.data-reading-text h2{
- font-size: 20px;
- text-align: end;
-}
-
-.data-reading-value{
- margin-bottom: -40px;
-}
-
-.data-reading-value p{
- font-size: 60px;
- font-weight: 600;
- text-align: center;
-}
-
-.data-reading-value p span{
- font-size: 45px;
- font-weight: 600;
-}
-
-.data-adjust-button{
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
- height: 60px;
-}
-
-.data-adjust-button .button{
- margin: 10px;
- width: auto;
- height: 40px;
- color: white;
- font-size: 20px;
- font-weight: 500;
- background: transparent;
- border: 2px solid white;
-}
-
-.data-adjust-button .button:hover{
- color: black;
- background: white;
- border: 2px solid white;
- transition: 0.5s;
-}
-
-.data-adjust-button .refValue{
- margin: 10px;
- width: auto;
- height: 20px;
-}
-
-.data-adjust-button .refValue p{
- font-size: 20px;
- display: flex;
- justify-content: center;
- align-items: center;
- margin: 10px;
+    background-color: orange;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .line-chart-group{
- display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr;
- margin: 10px;
- 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 10px;
+}
+
+.line-chart{
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
