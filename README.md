@@ -82,4 +82,4 @@ dotnet watch
 
 ## Note
 
-This dashboard is developed merely for educational purposes and is also displayed on the local server at IoT Laboratory, CENTEXS for public view. 
+This dashboard is developed merely for educational purposes and is displayed on the local server at IoT Laboratory, CENTEXS for public view and student references. 
