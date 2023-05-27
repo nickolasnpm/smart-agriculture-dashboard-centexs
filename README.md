@@ -24,7 +24,7 @@ git clone https://github.com/nickolasnpm/smart-agriculture-dashboard-centexs.git
 
 To run this project on your machine, please ensure that you have the following tools:
 
-1. Visual Studio Code 
+1. Visual Studio Code or any other Code Editor of your choice
 
 ```bash
 https://code.visualstudio.com/
