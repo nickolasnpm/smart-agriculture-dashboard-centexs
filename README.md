@@ -47,7 +47,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 User secret is a place for you to keep all confidential information that enable you to connect with Google Sheet Database. Please insert the following information to your user secret file in your server folder.
 
 ```bash
-      "SpreadSheet_Paddy": {
+      "SpreadSheet_Mudcrab/SpreadSheet_Paddy": {
         "spreadSheetId": "Your SpreadSheet ID",
         "apiKey": "Your Google API Key",
         "appName": "Your Google Cloud Project Name",
