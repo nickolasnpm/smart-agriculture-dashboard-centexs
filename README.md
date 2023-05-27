@@ -42,6 +42,28 @@ https://nodejs.org/en
 https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 ```
 
+### User Secret
+
+User secret is a place for you to keep all confidential information that enable you to connect with Google Sheet Database. Please insert the following information to your user secret file in your server folder.
+
+```bash
+      "SpreadSheet_Paddy": {
+        "spreadSheetId": "Your SpreadSheet ID",
+        "apiKey": "Your Google API Key",
+        "appName": "Your Google Cloud Project Name",
+        "sheet": "Your Sheet Title"
+      }
+```
+
+Get your API Key and Project Name by creating the google cloud project as below:
+
+```bash
+https://www.youtube.com/watch?v=brCkpzAD0gc
+```
+
+Get your SpreadSheet ID and Sheet Title for your google spreadsheets. 
+
+
 ### Command
 
 This project has two folders; client and server. Please follow the following terminal command to run the folders.
