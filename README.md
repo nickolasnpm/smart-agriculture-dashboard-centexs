@@ -75,7 +75,7 @@ npm install
 ```
 
 ```bash
-ng serve -o
+ng serve -open
 ```
 
 2. Server
