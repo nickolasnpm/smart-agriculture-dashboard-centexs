@@ -71,6 +71,10 @@ This project has two folders; client and server. Please follow the following ter
 1. Client
 
 ```bash
+npm install
+```
+
+```bash
 ng serve -o
 ```
 
@@ -82,4 +86,4 @@ dotnet watch
 
 ## Note
 
-This dashboard is developed merely for educational purposes and is displayed on the local server at IoT Laboratory, CENTEXS for public view and student references. 
+This dashboard is developed for educational purposes and displayed on the local server at IoT Laboratory, CENTEXS for public view and student reference. 
