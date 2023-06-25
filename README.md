@@ -71,10 +71,6 @@ This project has two folders; client and server. Please follow the following ter
 1. Client
 
 ```bash
-npm install
-```
-
-```bash
 ng serve -open
 ```
 
